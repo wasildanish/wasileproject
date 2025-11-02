@@ -1,0 +1,229 @@
+/* Shimmer effect for section titles */
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #c084fc 20%, #fff 50%, #a78bfa 80%);
+  background-size: 200% auto;
+  color: #2b0b4d;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerTitle 2.5s linear infinite;
+}
+@keyframes shimmerTitle {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Animated gradient border for cards */
+.card {
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(var(--card), var(--card)), linear-gradient(120deg, #c084fc 0%, #a78bfa 100%);
+  transition: box-shadow .22s, border-color .18s, background-image .5s;
+}
+.card:hover {
+  box-shadow: 0 8px 32px 0 #c084fc33, 0 1.5px 8px 0 #a78bfa22;
+  border-color: #c084fc;
+  background-image: linear-gradient(var(--card), var(--card)), linear-gradient(270deg, #a78bfa 0%, #c084fc 100%);
+}
+
+/* Floating animation for hero image */
+.hero-grid img {
+  animation: floatImg 3.5s ease-in-out infinite;
+}
+@keyframes floatImg {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px) scale(1.03); }
+}
+/* Logo sparkles */
+.logo-anim {
+  position: relative;
+  display: inline-block;
+}
+.sparkle {
+  position: absolute;
+  width: 14px; height: 14px;
+  background: radial-gradient(circle,#fff 60%,#c084fc 100%);
+  border-radius: 50%;
+  opacity: 0.7;
+  pointer-events: none;
+  animation: sparkleAnim 2.2s infinite;
+}
+.sparkle1 { left: 8px; top: 6px; animation-delay: 0s; }
+.sparkle2 { right: 6px; top: 12px; animation-delay: 0.7s; }
+.sparkle3 { left: 22px; bottom: 6px; animation-delay: 1.3s; }
+@keyframes sparkleAnim {
+  0%,100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.5) rotate(20deg); }
+}
+
+/* Floating crystals in hero */
+.floating-crystals {
+  position: absolute;
+  left: 0; top: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.crystal {
+  position: absolute;
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg,#a78bfa 60%,#f3e8ff 100%);
+  border-radius: 8px 24px 8px 24px / 24px 8px 24px 8px;
+  opacity: 0.7;
+  filter: blur(0.5px) drop-shadow(0 2px 8px #c084fc66);
+  animation: floatCrystal 7s infinite linear;
+}
+.crystal1 { left: 12%; top: 18%; animation-delay: 0s; }
+.crystal2 { left: 78%; top: 22%; animation-delay: 2.2s; }
+.crystal3 { left: 45%; top: 8%; animation-delay: 4.1s; }
+@keyframes floatCrystal {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-24px) scale(1.1) rotate(8deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+/* Preloader styles */
+#preloader {
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, #f3e8ff 0%, #c084fc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s cubic-bezier(.22,1,.36,1);
+}
+#preloader .loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #fff;
+  border-top: 6px solid #a78bfa;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 24px #c084fc44;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.root{--accent:#6b46c1;--muted:#6b7280;--bg:#f7fafc;--card:#fff}
+:root{--accent:#6b46c1;--accent-600:#5b3ab0;--accent-400:#8b6be0;--muted:#6b7280;--bg:#f7fafc;--card:#fff;--shadow:0 8px 20px rgba(16,24,40,0.08)}
+.nav-bg{--nav-bg:#f3e8ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:#0f172a;-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+.header-clear, header{background:var(--nav-bg, #fff);border-bottom:0!important;box-shadow:none!important;position:sticky;top:0;z-index:40}
+.topbar, .container.topbar{border-bottom:0!important;box-shadow:none!important}
+.topbar{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 8px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:44px;height:44px}
+.logo .site-title, .logo .muted{color:#2b0b4d}
+.site-title{font-weight:700;font-size:1.125rem}
+nav{display:flex;
+  align-items:center;
+  gap:18px}
+.nav-links{display:flex;gap:12px;align-items:center}
+.nav-links a{padding:8px 10px;border-radius:8px;transition:background .18s ease,color .18s ease,transform .18s ease;color:var(--accent)}
+.nav-links a.active{background:rgba(107,70,193,0.08);color:var(--accent-600)}
+.nav-links a:hover{background:#f1f5f9;transform:translateY(-2px);color:var(--accent-600)}
+.nav-links a:focus{outline:2px solid rgba(107,70,193,0.14);outline-offset:3px}
+.cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;transition:transform .15s ease,box-shadow .15s ease}
+.cta:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+/* Home page specific blue CTA variant (keeps global accent unchanged) */
+.cta-blue{background:#0d6efd;box-shadow:none}
+.cta-blue:hover{box-shadow:0 10px 24px rgba(13,110,253,0.12);transform:translateY(-3px)}
+.hero{
+  background:linear-gradient(90deg,#f3e8ff 0%,#e9d5ff 100%);
+  padding:36px 0;
+  position:relative;
+  overflow:hidden;
+  z-index: 0;
+}
+.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:center}
+.products{padding:36px 0}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.grid:hover{ cursor: pointer;}
+.card{background:var(--card);border:1px solid #e6eef5;border-radius:12px;overflow:hidden;padding:0;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(107,70,193,0.12)}
+.card img{width:100%;height:150px;object-fit:cover;display:block;background:#e2e8f0;transition:transform .5s ease,filter .3s ease}
+.card:hover img{transform:scale(1.03);filter:brightness(0.98)}
+.card .meta{padding:14px}
+.price{font-weight:700;color:#0f172a}
+footer{padding:20px 0;background:#fff;border-top:1px solid #e6eef5;margin-top:40px}
+.footer-grid{display:flex;gap:20px;flex-wrap:wrap}
+.menu-toggle{display:none;background:transparent;border:0;font-size:1.25rem}
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr}
+  nav{display:none}
+  .menu-toggle{display:inline-block}
+  .mobile-nav{display:none;background:#fff;border-top:1px solid #e6eef5}
+  .mobile-nav.open{display:block}
+  /* Ensure mobile nav's inner nav is visible even though primary nav is hidden */
+  .mobile-nav nav{display:block}
+  .mobile-nav .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px}
+  .mobile-nav .nav-links a{display:block;padding:10px 12px;border-radius:8px;color:var(--accent);width:100%}
+  .mobile-nav .nav-links a:hover{background:#f1f5f9}
+  /* Position mobile nav so it does not get covered by the sticky header and is fully visible */
+  .mobile-nav{position:absolute;left:0;right:0;top:72px;z-index:60;box-shadow:0 8px 30px rgba(16,24,40,0.06)}
+  /* Ensure header container is positioned to allow absolute positioning inside it */
+  .container.topbar{position:relative}
+}
+.muted{color:var(--muted);font-size:0.95rem}
+.badge{background:#eef2ff;color:#3730a3;padding:4px 8px;border-radius:999px;font-size:0.75rem}
+.controls{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.filter-btn{background:#fff;border:1px solid #e6eef5;padding:8px 10px;border-radius:8px;cursor:pointer;transition:background .12s ease,transform .12s ease}
+.filter-btn:hover{background:rgba(107,70,193,0.06);transform:translateY(-2px)}
+.filter-btn:focus{outline:2px solid rgba(107,70,193,0.12);outline-offset:3px}
+.compare-btn{background:#fff;border:1px solid #e6eef5;padding:6px 8px;border-radius:6px;cursor:pointer;transition:background .12s ease}
+.compare-btn:hover{background:#f1f5f9}
+small{color:var(--muted)}
+
+/* subtle page load animation */
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.container > .products, .hero, .grid, .card{animation:fadeUp .36s ease both}
+
+.nav-links a{position:relative}
+/* Nav link animated underline (restored) */
+.nav-links a::after{content:'';position:absolute;left:12px;right:12px;bottom:8px;height:2px;background:linear-gradient(90deg,var(--accent) 0%,var(--accent-600) 100%);transform:scaleX(0);transform-origin:left center;transition:transform .28s cubic-bezier(.2,.9,.3,1),opacity .2s}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);opacity:1}
+
+/* CTA subtle pulse */
+.cta.pulse{animation: pulseCTA 2.6s infinite}
+@keyframes pulseCTA{0%{box-shadow:0 6px 20px rgba(107,70,193,0.08)}50%{box-shadow:0 14px 36px rgba(107,70,193,0.14);transform:translateY(-2px)}100%{box-shadow:0 6px 20px rgba(107,70,193,0.08);transform:none}}
+
+/* Compare count pulse when updated */
+.count-pulse{animation: countPulse .8s ease}
+@keyframes countPulse{0%{transform:scale(1)}50%{transform:scale(1.28)}100%{transform:scale(1)}}
+
+/* Hero shimmer background (subtle) */
+.hero::after{content:'';position:absolute;left:-20%;top:-30%;width:140%;height:160%;background:linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.06) 100%);transform:rotate(-12deg);animation: heroShimmer 8s linear infinite;pointer-events:none}
+@keyframes heroShimmer{0%{transform:translateX(-20%) rotate(-12deg)}100%{transform:translateX(20%) rotate(-12deg)}}
+
+/* Respect user motion preference */
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+/* enhanced footer styles (removed - not used in current pages) */
+
+/* simple footer variant (compact) */
+.site-footer.simple{padding:18px 0;background:transparent;border-top:0}
+.site-footer.simple .container{display:flex;align-items:center;justify-content:space-between}
+.site-footer.simple svg{filter:drop-shadow(0 6px 16px rgba(107,70,193,0.06))}
+.site-footer.simple .muted{color:var(--muted)}
+.site-footer.simple .muted a{color:var(--accent)}
+@media (max-width:600px){
+  .site-footer.simple .container{flex-direction:column;gap:8px;align-items:center;text-align:center}
+}
+
+/* About page styles (removed - not used in current pages) */
+.wasil{
+  background-color:#b3edfc;
+}
+.ws{
+   background-color:#b3edfc;
+   
+}

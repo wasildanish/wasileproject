@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Arrival — Crystal Shop</title>
+    <link rel="stylesheet" href="styles.css">
+       <link rel="icon" type="image/png" sizes="32x32" href="img/tittl.webp">
+  </head>
+  <body>
+    <!-- ...existing code... -->
+    <header>
+      <div class="wasil">
+      <div class="container topbar">
+        <div class="logo">
+          <span class="logo-anim">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="64" height="64" rx="12" fill="#6b46c1" />
+              <path d="M18 40 L30 24 L46 44" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="sparkle sparkle1"></span>
+            <span class="sparkle sparkle2"></span>
+            <span class="sparkle sparkle3"></span>
+          </span>
+          <div>
+            <div class="site-title">Crystal Shop</div>
+          </div>
+        </div>
+
+
+          <!-- mobile menu toggle -->
+          <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#2b0b4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+            <nav aria-label="Mobile navigation">
+              <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="special-offers.html">Special Offers</a>
+                <a href="new-arrival.html">New Arrival</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    </div>
+    <main class="container" style="position:relative;">
+      <div class="floating-crystals">
+        <span class="crystal crystal1"></span>
+        <span class="crystal crystal2"></span>
+        <span class="crystal crystal3"></span>
+      </div>
+      <section class="products">
+        <div class="section-title"><h2>New Arrival</h2><div class="muted">Recently added items</div></div>
+        <div class="grid">
+          <article class="card"><img src="img/Moonstone Ring.jpg" alt="Moonstone Ring" /><div class="meta"><strong>Moonstone Ring</strong><div class="muted">Just in • $49</div></div></article>
+          <article class="card"><img src="img/Obsidian Palm Stone.jpg" alt="Obsidian Palm Stone" /><div class="meta"><strong>Obsidian Palm Stone</strong><div class="muted">Powerful protection • $29</div></div></article>
+
+          <article class="card"><img src="img/Labradorite Necklace.jpg" alt="Labradorite Necklace" /><div class="meta"><strong>Labradorite Necklace</strong><div class="muted">Iridescent flash • $69</div></div></article>
+          <article class="card"><img src="img/Lapis Lazuli Pendant.jpg" alt="Lapis Lazuli Pendant" /><div class="meta"><strong>Lapis Lazuli Pendant</strong><div class="muted">Deep blue • $55</div></div></article>
+
+          <article class="card"><img src="img/Rose Quartz Tower.jpg" alt="Rose Quartz Tower" /><div class="meta"><strong>Rose Quartz Tower</strong><div class="muted">Gentle energy • $39</div></div></article>
+          <article class="card"><img src="img/Black Tourmaline Point.jpg" alt="Black Tourmaline Point" /><div class="meta"><strong>Black Tourmaline Point</strong><div class="muted">Protection • $34</div></div></article>
+
+          <article class="card"><img src="img/Selenite Wand.jpeg" alt="Selenite Wand" /><div class="meta"><strong>Selenite Wand</strong><div class="muted">Cleansing • $24</div></div></article>
+          <article class="card"><img src="img/Citrine Bracelet.jpg" alt="Citrine Bracelet" /><div class="meta"><strong>Citrine Bracelet</strong><div class="muted">Joy & abundance • $44</div></div></article>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer simple">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#6b46c1"/></svg>
+          <div>
+            <div style="font-weight:700">Crystal Shop</div>
+            <div class="muted" style="font-size:0.9rem">Gems & crystals</div>
+          </div>
+        </div>
+
+        <div class="muted" style="font-size:0.95rem">&copy; <span id="year"></span> • All rights reserved</div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>

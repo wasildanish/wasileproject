@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Compare Products — Crystal Shop</title>
+    <link rel="stylesheet" href="styles.css">
+       <link rel="icon" type="image/png" sizes="32x32" href="img/tittl.webp">
+  </head>
+  <body>
+    <header>
+        <div class="wasil">
+      <div class="container topbar">
+        <div class="logo">
+          <span class="logo-anim">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="64" height="64" rx="12" fill="#6b46c1" />
+              <path d="M18 40 L30 24 L46 44" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="sparkle sparkle1"></span>
+            <span class="sparkle sparkle2"></span>
+            <span class="sparkle sparkle3"></span>
+          </span>
+          <div>
+            <div class="site-title">Crystal Shop</div>
+          </div>
+        </div>
+
+      
+
+          <!-- mobile menu toggle -->
+          <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#2b0b4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+            <nav aria-label="Mobile navigation">
+              <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="compare.html">Compare</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    </div>
+
+    <main class="container" style="position:relative;">
+      <div class="floating-crystals">
+        <span class="crystal crystal1"></span>
+        <span class="crystal crystal2"></span>
+        <span class="crystal crystal3"></span>
+      </div>
+      <section class="products">
+        <div class="section-title"><h2>Compare Products</h2><div class="muted">Selected items</div></div>
+        <div id="compareArea" class="grid"></div>
+        <div style="margin-top:12px"><a href="products.html">Back to products</a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer simple">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#6b46c1"/></svg>
+          <div>
+            <div style="font-weight:700">Crystal Shop</div>
+            <div class="muted" style="font-size:0.9rem">Gems & crystals</div>
+          </div>
+        </div>
+
+        <div class="muted" style="font-size:0.95rem">&copy; <span id="year"></span> • All rights reserved</div>
+      </div>
+    </footer>
+
+    <script>
+      function renderCompare(){
+        var list = JSON.parse(localStorage.getItem('compareList')||'[]');
+        var area = document.getElementById('compareArea');
+        area.innerHTML = '';
+        if(list.length === 0){ area.innerHTML = '<p class="muted">No items selected. Go to Products and add up to 3 items to compare.</p>'; return; }
+        list.forEach(function(item){
+          // try to find product card in products page by id
+          var card = document.querySelector('[data-id="'+item.id+'"]');
+          var el = document.createElement('article'); el.className = 'card';
+          var title = document.createElement('div'); title.className='meta';
+          title.innerHTML = '<strong>'+item.name+'</strong><div class="muted">Detailed comparison will show basic attributes here.</div>';
+          el.appendChild(title);
+          area.appendChild(el);
+        });
+      }
+      document.addEventListener('DOMContentLoaded', function(){ renderCompare(); });
+    </script>
+    <script src="main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>

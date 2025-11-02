@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Special Offers — Crystal Shop</title>
+    <link rel="stylesheet" href="styles.css">
+       <link rel="icon" type="image/png" sizes="32x32" href="img/tittl.webp">
+  </head>
+  <body>
+    <!-- ...existing code... -->
+    <header>
+      <div class="wasil">
+      <div class="container topbar">
+        <div class="logo">
+          <span class="logo-anim">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="64" height="64" rx="12" fill="#6b46c1" />
+              <path d="M18 40 L30 24 L46 44" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="sparkle sparkle1"></span>
+            <span class="sparkle sparkle2"></span>
+            <span class="sparkle sparkle3"></span>
+          </span>
+          <div>
+            <div class="site-title">Crystal Shop</div>
+          </div>
+        </div>
+
+      
+
+          <!-- mobile menu toggle -->
+          <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#2b0b4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+            <nav aria-label="Mobile navigation">
+              <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="special-offers.html">Special Offers</a>
+                <a href="new-arrival.html">New Arrival</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+     </div>
+    <main class="container" style="position:relative;">
+      <div class="floating-crystals">
+        <span class="crystal crystal1"></span>
+        <span class="crystal crystal2"></span>
+        <span class="crystal crystal3"></span>
+      </div>
+      <section class="products">
+        <div class="section-title"><h2>Special Offers</h2><div class="muted">Limited time discounts</div></div>
+        <div class="grid">
+          <article class="card"><img src="img/Amethyst Pendant.jpg" alt="Offer 1" /><div class="meta"><strong>Amethyst Pendant - 20% off</strong><div class="muted">Limited stock</div></div></article>
+          <article class="card"><img src="img/Quartz Set.jpg" alt="Offer 2" /><div class="meta"><strong>Quartz Set - 15% off</strong><div class="muted">Gift bundle</div></div></article>
+          <article class="card"><img src="img/Rose Quartz Heart.jpg" alt="Offer 3" /><div class="meta"><strong>Rose Quartz Heart - 30% off</strong><div class="muted">Valentine's special</div></div></article>
+          <article class="card"><img src="img/Citrine Bracelet.jpg" alt="Offer 4" /><div class="meta"><strong>Citrine Bracelet - 10% off</strong><div class="muted">Happiness boost</div></div></article>
+          <article class="card"><img src="img/Black Tourmaline.jpg" alt="Offer 5" /><div class="meta"><strong>Black Tourmaline - 25% off</strong><div class="muted">Protection stone</div></div></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer simple">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#6b46c1"/></svg>
+          <div>
+            <div style="font-weight:700">Crystal Shop</div>
+            <div class="muted" style="font-size:0.9rem">Gems & crystals</div>
+          </div>
+        </div>
+
+        <div class="muted" style="font-size:0.95rem">&copy; <span id="year"></span> • All rights reserved</div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>

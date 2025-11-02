@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us — Crystal Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/tittl.webp">
+    <!-- jQuery (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJ+Y3Qv7v4y0a2a4Zp6Q5s5b5a1q2+6f9Y3Yc=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- ...existing code... -->
+    <header>
+            <div class="wasil">
+      <div class="container topbar">
+        <div class="logo">
+          <span class="logo-anim">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="64" height="64" rx="12" fill="#6b46c1" />
+              <path d="M18 40 L30 24 L46 44" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="sparkle sparkle1"></span>
+            <span class="sparkle sparkle2"></span>
+            <span class="sparkle sparkle3"></span>
+          </span>
+          <div>
+            <div class="site-title">Crystal Shop</div>
+            <div class="muted">Gems & healing crystals</div>
+          </div>
+        </div>
+
+  
+        
+
+          <!-- mobile menu toggle -->
+          <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#2b0b4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+            <nav aria-label="Mobile navigation">
+              <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="special-offers.html">Special Offers</a>
+                <a href="new-arrival.html">New Arrival</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    </div>
+
+  <main class="container reveal" style="padding:32px 0;position:relative;">
+    <div class="section-title" style="text-align:left;margin-bottom:18px">
+      <h2 style="margin:0 0 6px">Contact Us</h2>
+      <div class="muted">Simple contact form — we'll reply within 2 business days.</div>
+    </div>
+
+    <div class="card" style="padding:20px;max-width:760px;margin:0 auto">
+      <form id="contactForm" style="display:flex;flex-direction:column;gap:10px">
+        <label class="muted" for="name">Full name</label>
+        <input id="name" name="name" type="text" required placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #e6eef5">
+
+        <label class="muted" for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com" style="padding:10px;border-radius:8px;border:1px solid #e6eef5">
+
+        <label class="muted" for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Write your question or message here" style="padding:10px;border-radius:8px;border:1px solid #e6eef5"></textarea>
+
+        <div style="display:flex;gap:10px;align-items:center">
+         <button type="submit" id="sendBtn" class="filter-btn" style="background:#1e90ff;color:#fff;padding:10px 14px;border-radius:8px;border:none">Send Message</button>
+          <button type="button" id="clearBtn" class="filter-btn" style="background:#f3f4f6;padding:10px 14px;border-radius:8px;border:none">Clear</button>
+          <small class="muted">Or email <a href="mailto:eprojects@aptech.ac.in">eprojects@aptech.ac.in</a></small>
+        </div>
+      </form>
+
+      <hr style="margin:16px 0;border:none;border-top:1px solid #eef3fb">
+
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div>
+          <strong>Phone</strong>
+          <div class="muted"><a href="tel:+911234567890">03248270051</a></div>
+        </div>
+        <div>
+          <strong>Address</strong>
+          <div class="muted">Aptech Garden Center — Karachi, Pakistan</div>
+        </div>
+        <div style="margin-top:8px;border-radius:8px;overflow:hidden">
+          <iframe width="100%" height="180" frameborder="0" style="border:0" src="https://www.google.com/maps?q=Aptech+Garden+Center,+Karachi,+Pakistan&output=embed" allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* jQuery-based handlers (requires jQuery in head) */
+      $(function(){
+        // set footer year
+        $('#year').text(new Date().getFullYear());
+
+        // Clear form when clear button clicked
+        $('#clearBtn').on('click', function(){
+          $('#contactForm')[0].reset();
+        });
+
+        // Submit handler: build a mailto: link and open user's mail client
+        $('#contactForm').on('submit', function(e){
+          e.preventDefault();
+          var nameVal = $('#name').val().trim();
+          var emailVal = $('#email').val().trim();
+          var messageVal = $('#message').val().trim();
+
+          // basic validation
+          if(!nameVal || !emailVal || !messageVal){
+            alert('Please fill all required fields before sending.');
+            return;
+          }
+
+          var subject = 'Contact form — Crystal Shop';
+          var bodyText = 'Name: ' + nameVal + '\n' +
+                         'Email: ' + emailVal + '\n\n' +
+                         messageVal;
+
+          var mailto = 'mailto:eprojects@aptech.ac.in'
+                    + '?subject=' + encodeURIComponent(subject)
+                    + '&body=' + encodeURIComponent(bodyText);
+
+          // Try opening mail client. If blocked, show the mailto so user can copy-paste.
+          try{
+            window.location.href = mailto;
+          }catch(err){
+            // fallback: open in new tab
+            window.open(mailto, '_blank');
+          }
+        });
+      });
+    </script>
+
+  <script src="main.js"></script>
+
+  <footer class="site-footer simple">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#6b46c1"/></svg>
+          <div>
+            <div style="font-weight:700">Crystal Shop</div>
+            <div class="muted" style="font-size:0.9rem">Gems & crystals</div>
+          </div>
+        </div>
+
+        <div class="muted" style="font-size:0.95rem">&copy; <span id="year"></span> • All rights reserved</div>
+      </div>
+    </footer>
+
+  </body>
+</html>

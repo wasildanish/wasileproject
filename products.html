@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Products — Crystal Shop</title>
+    <link rel="stylesheet" href="styles.css">
+       <link rel="icon" type="image/png" sizes="32x32" href="img/tittl.webp">
+  </head>
+     <body>
+      <header>
+       <div class="wasil">
+      <div class="container topbar">
+        <div class="logo">
+          <span class="logo-anim">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="64" height="64" rx="12" fill="#6b46c1" />
+              <path d="M18 40 L30 24 L46 44" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="sparkle sparkle1"></span>
+            <span class="sparkle sparkle2"></span>
+            <span class="sparkle sparkle3"></span>
+          </span>
+
+            <div class="site-title">Crystal Shop</div>
+          </div>
+
+    
+
+          <!-- mobile menu toggle -->
+          <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#2b0b4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+            <nav aria-label="Mobile navigation">
+              <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="special-offers.html">Special Offers</a>
+                <a href="new-arrival.html">New Arrival</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="compare.html">Compare (<span id="compareCount">0</span>)</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    </div>
+    <main class="container" style="position:relative;">
+      <div class="floating-crystals">
+        <span class="crystal crystal1"></span>
+        <span class="crystal crystal2"></span>
+        <span class="crystal crystal3"></span>
+      </div>
+      <section class="products">
+        <div class="section-title"><h2>All Products</h2><div class="muted">Filter by crystal type</div></div>
+
+        <div class="controls">
+          <button class="filter-btn" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Diamond">Diamond</button>
+          <button class="filter-btn" data-filter="Amber">Amber</button>
+          <button class="filter-btn" data-filter="Amethyst">Amethyst</button>
+          <button class="filter-btn" data-filter="Quartz">Quartz</button>
+          <a class="compare-btn" href="compare.html">Compare (<span id="compareCountInline">0</span>)</a>
+        </div>
+
+        <div class="grid" id="productGrid">
+          <!-- products with data-category and data-id; download links to docs/*.doc -->
+          <article class="card" data-category="Amethyst" data-id="p1">
+            <img src="img/Amethyst Pendant.jpg" alt="Amethyst Pendant" />
+            <div class="meta"><strong>Amethyst Pendant</strong><div class="muted">Soothing energy • <span class="price">$39</span></div>
+              <div style="margin-top:8px"><a href="docs/amethyst_pendant.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p1" data-name="Amethyst Pendant">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Quartz" data-id="p2">
+            <img src="img/Clear Quartz Cluster.jpg" alt="Clear Quartz" />
+            <div class="meta"><strong>Clear Quartz Cluster</strong><div class="muted">Amplification • <span class="price">$59</span></div>
+              <div style="margin-top:8px"><a href="docs/clear_quartz.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p2" data-name="Clear Quartz Cluster">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Amber" data-id="p3">
+            <img src="img/Amber Beads.jpg" alt="Amber Beads" />
+            <div class="meta"><strong>Amber Beads</strong><div class="muted">Warmth & healing • <span class="price">$49</span></div>
+              <div style="margin-top:8px"><a href="docs/amber_beads.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p3" data-name="Amber Beads">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Diamond" data-id="p4">
+            <img src="img/Diamond Ring.jpg" alt="Diamond Ring" />
+            <div class="meta"><strong>Diamond Ring</strong><div class="muted">Sparkle & clarity • <span class="price">$499</span></div>
+              <div style="margin-top:8px"><a href="docs/diamond_ring.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p4" data-name="Diamond Ring">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Amethyst" data-id="p5">
+            <img src="img/Amethyst Cluster.jpg" alt="Amethyst Cluster" />
+            <div class="meta"><strong>Amethyst Cluster</strong><div class="muted">Calming display piece • <span class="price">$89</span></div>
+              <div style="margin-top:8px"><a href="docs/amethyst_cluster.doc" download>Details (.doc)</a> ·<button class="compare-toggle" data-id="p5" data-name="Amethyst Cluster">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Quartz" data-id="p6">
+            <img src="img/Rose Quartz Tower.jpg" alt="Rose Quartz" />
+            <div class="meta"><strong>Rose Quartz Heart</strong><div class="muted">Love & harmony • <span class="price">$35</span></div>
+              <div style="margin-top:8px"><a href="docs/rose_quartz.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p6" data-name="Rose Quartz Heart">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Amber" data-id="p7">
+            <img src="img/Amber Pendant.jpg" alt="Amber Pendant" />
+            <div class="meta"><strong>Amber Pendant</strong><div class="muted">Natural beauty • <span class="price">$42</span></div>
+              <div style="margin-top:8px"><a href="docs/amber_pendant.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p7" data-name="Amber Pendant">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Diamond" data-id="p8">
+            <img src="img/Diamond Earrings.jpg" alt="Diamond Earrings" />
+            <div class="meta"><strong>Diamond Earrings</strong><div class="muted">Elegant sparkle • <span class="price">$299</span></div>
+              <div style="margin-top:8px"><a href="docs/diamond_earrings.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p8" data-name="Diamond Earrings">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Amethyst" data-id="p9">
+            <img src="img/Amethyst Ring.jpg" alt="Amethyst Ring" />
+            <div class="meta"><strong>Amethyst Ring</strong><div class="muted">Peaceful mind • <span class="price">$55</span></div>
+              <div style="margin-top:8px"><a href="docs/amethyst_ring.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p9" data-name="Amethyst Ring">Add to Compare</button></div>
+            </div>
+          </article>
+
+          <article class="card" data-category="Quartz" data-id="p10">
+            <img src="img/Smoky Quartz Wand.jpg" alt="Smoky Quartz" />
+            <div class="meta"><strong>Smoky Quartz Wand</strong><div class="muted">Grounding energy • <span class="price">$38</span></div>
+              <div style="margin-top:8px"><a href="docs/smoky_quartz.doc" download>Details (.doc)</a> · <button class="compare-toggle" data-id="p10" data-name="Smoky Quartz Wand"  >Add to Compare</button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer simple">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="10" fill="#6b46c1"/></svg>
+          <div>
+            <div style="font-weight:700">Crystal Shop</div>
+            <div class="muted" style="font-size:0.9rem">Gems & crystals</div>
+          </div>
+        </div>
+
+        <div class="muted" style="font-size:0.95rem">&copy; <span id="year"></span> • All rights reserved</div>
+      </div>
+    </footer>
+
+    <script>
+      function initProductFilters(){
+        var grid = document.getElementById('productGrid');
+        var controls = document.querySelectorAll('.filter-btn');
+        controls.forEach(function(btn){
+          btn.addEventListener('click', function(){
+            var f = this.dataset.filter;
+            grid.querySelectorAll('.card').forEach(function(card){
+              if(f === 'all' || card.dataset.category === f) card.style.display = '';
+              else card.style.display = 'none';
+            });
+          });
+        });
+
+        // update compare count inline
+        var updateInline = function(){
+          var list = JSON.parse(localStorage.getItem('compareList')||'[]');
+          var c = document.getElementById('compareCountInline');
+          if(c) c.textContent = list.length;
+        };
+        updateInline();
+        window.updateCompareCount = updateInline;
+      }
+    </script>
+    <script src="main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
